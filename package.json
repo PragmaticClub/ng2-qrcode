@@ -1,10 +1,10 @@
 {
   "name": "ng2-qrcode",
   "version": "0.1.0",
-  "description": "Simple drag and drop with dragula",
+  "description": "Angular2 QRCode generator based on qrcodejs2",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/valor-software/ng2-dragula.git"
+    "url": "git+https://github.com/PragmaticClub/ng2-qrcode.git"
   },
   "keywords": [
     "angular2",
@@ -16,9 +16,9 @@
   "author": "Andrea Patuzzo <andrea@pragmatic.club>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/valor-software/ng2-dragula/issues"
+    "url": "https://github.com/PragmaticClub/ng2-qrcode/issues"
   },
-  "homepage": "https://github.com/valor-software/ng2-dragula#readme",
+  "homepage": "https://github.com/PragmaticClub/ng2-qrcode#readme",
   "dependencies": {
     "qrcodejs2": "^0.0.2"
   },
