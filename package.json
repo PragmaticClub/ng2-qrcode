@@ -1,0 +1,36 @@
+{
+  "name": "ng2-qrcode",
+  "version": "0.1.0",
+  "description": "Simple drag and drop with dragula",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valor-software/ng2-dragula.git"
+  },
+  "keywords": [
+    "angular2",
+    "ng2",
+    "qrcode",
+    "qrcodejs",
+    "ng2-qrcode"
+  ],
+  "author": "Andrea Patuzzo <andrea@pragmatic.club>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/valor-software/ng2-dragula/issues"
+  },
+  "homepage": "https://github.com/valor-software/ng2-dragula#readme",
+  "dependencies": {
+    "qrcodejs2": "^0.0.2"
+  },
+  "peerDependencies": {
+    "@angular/common": "^2.0.0-rc.1",
+    "@angular/core": "^2.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@angular/common": "2.0.0-rc.1",
+    "@angular/core": "2.0.0-rc.1",
+    "@angular/compiler": "2.0.0-rc.1",
+    "@angular/platform-browser": "2.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.1",
+  }
+}
