@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "target": "es5",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "declaration": true
+  },
+  "filesGlob": [
+    "./ng2-qrcode.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
