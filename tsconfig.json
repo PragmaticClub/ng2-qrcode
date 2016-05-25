@@ -1,20 +1,17 @@
 {
   "compilerOptions": {
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "target": "es5",
     "module": "commonjs",
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    "outDir": "dist"
   },
   "files": [
-    "ng2-qrcode.ts",
-    "node_modules/angular2/typings/browser.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "typings/main",
-    "typings/main.d.ts"
+    "ng2-qrcode/ng2-qrcode.ts",
+    "typings/browser.d.ts"
   ]
 }

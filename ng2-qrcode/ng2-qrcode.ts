@@ -1,5 +1,4 @@
-import {bootstrap} from 'angular2/platform/browser';
-import {Component, Inject, Input, ElementRef, OnInit} from 'angular2/core';
+import {Component, Inject, Input, ElementRef, OnInit} from '@angular/core';
 
 declare var QRCode: any;
 
@@ -8,12 +7,12 @@ declare var QRCode: any;
   template: ''
 })
 export class QRCodeComponent implements OnInit {
-  @Input() qrdata: String = '';
-  @Input() size: Number = 256;
-  @Input() level: String = 'M';
-  @Input() colordark: String = '#000000';
-  @Input() colorlight: String = '#ffffff';
-  @Input() usesvg: Boolean = false;
+  @Input() qrdata: String = ''
+  @Input() size: Number = 256
+  @Input() level: String = 'M'
+  @Input() colordark: String = '#000000'
+  @Input() colorlight: String = '#ffffff'
+  @Input() usesvg: Boolean = false
   
   constructor(
     @Inject('window') window: Window,

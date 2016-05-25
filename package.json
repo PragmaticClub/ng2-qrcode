@@ -23,22 +23,21 @@
     "prepublish": "tsc",
     "postinstall": "typings install"
   },
+  "main": "dist/ng2-qrcode.js",
   "dependencies": {
-    "qrcodejs2": "^0.0.2"
-  },
-  "peerDependencies": {
-    "angular2": "^2.0.0-beta.17"
+    "qrcodejs2": "^0.0.2",
+    "@angular/common": "2.0.0-rc.1",
+    "@angular/compiler": "2.0.0-rc.1",
+    "@angular/core": "2.0.0-rc.1",
+    "@angular/platform-browser": "2.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.1"
   },
   "devDependencies": {
-    "angular2": "^2.0.0-beta.17",
-    "reflect-metadata": "0.1.2",
-    "rxjs": "5.0.0-beta.6",
     "ts-loader": "^0.8",
     "es6-promise": "^3.0",
     "es6-shim": "^0.35",
     "typescript": "^1.8.10",
-    "typings":"^0.8.1",
-    "zone.js": "^0.6.12"
+    "typings":"^0.8.1"
   },
-  "typings": "./ng2-qrcode.d.ts"
+  "typings": "dist/ng2-qrcode"
 }
