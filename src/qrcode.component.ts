@@ -1,3 +1,4 @@
+import {bootstrap} from 'angular2/platform/browser';
 import {Component, Inject, Input, ElementRef, OnInit} from 'angular2/core';
 
 declare var QRCode: any;

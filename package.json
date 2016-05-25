@@ -20,14 +20,25 @@
   },
   "homepage": "https://github.com/PragmaticClub/ng2-qrcode#readme",
   "scripts": {
-    "prepublish": "tsc"
+    "prepublish": "tsc",
+    "postinstall": "typings install"
   },
   "dependencies": {
-    "angular2": "^2.0.0-beta.17",
     "qrcodejs2": "^0.0.2"
   },
+  "peerDependencies": {
+    "angular2": "^2.0.0-beta.17"
+  },
   "devDependencies": {
-    "typescript": "^1.8.10"
+    "angular2": "^2.0.0-beta.17",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.6",
+    "ts-loader": "^0.8",
+    "es6-promise": "^3.0",
+    "es6-shim": "^0.35",
+    "typescript": "^1.8.10",
+    "typings":"^0.8.1",
+    "zone.js": "^0.6.12"
   },
   "typings": "./ng2-qrcode.d.ts"
 }
