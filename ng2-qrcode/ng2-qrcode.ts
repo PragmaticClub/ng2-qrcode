@@ -15,7 +15,6 @@ export class QRCodeComponent implements OnInit {
   @Input() usesvg: Boolean = false
   
   constructor(
-    @Inject('window') window: Window,
     private el: ElementRef
   ) { }
 
