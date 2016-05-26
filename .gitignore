@@ -13,3 +13,6 @@ Thumbs.db
 *.js
 *.map
 *.d.ts
+
+# Include /dist
+!dist/*
