@@ -1,7 +1,9 @@
 {
   "name": "ng2-qrcode",
   "version": "0.1.0",
-  "description": "Angular2 QRCode generator based on qrcodejs2",
+  "description": "Angular2 QRCode generator using qrcodejs",
+  "author": "Andrea Patuzzo <andrea@pragmatic.club>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PragmaticClub/ng2-qrcode.git"
@@ -13,17 +15,16 @@
     "qrcodejs",
     "ng2-qrcode"
   ],
-  "author": "Andrea Patuzzo <andrea@pragmatic.club>",
-  "license": "MIT",
+  "homepage": "https://github.com/PragmaticClub/ng2-qrcode#readme",
   "bugs": {
     "url": "https://github.com/PragmaticClub/ng2-qrcode/issues"
   },
-  "homepage": "https://github.com/PragmaticClub/ng2-qrcode#readme",
+  "main": "dist/ng2-qrcode.js",
+  "typings": "dist/ng2-qrcode",
   "scripts": {
-    "prepublish": "tsc",
+    "prepublish": "typings install && tsc",
     "postinstall": "typings install"
   },
-  "main": "dist/ng2-qrcode.js",
   "dependencies": {
     "qrcodejs2": "^0.0.2",
     "@angular/common": "2.0.0-rc.1",
@@ -38,6 +39,5 @@
     "es6-shim": "^0.35",
     "typescript": "^1.8.10",
     "typings":"^0.8.1"
-  },
-  "typings": "dist/ng2-qrcode"
+  }
 }
