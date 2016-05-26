@@ -25,6 +25,12 @@ import {QRCodeComponent} from 'ng2-qrcode'
 })
 ```
 
+Include the qrcode.js library in your site
+
+```  
+  <script src="<node_modules_path>/qrcodejs2/qrcode.min.js"></script>
+```       
+
 ## Parameters
 
 | Attribute        | Type           | Default | Description  |
