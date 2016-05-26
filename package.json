@@ -1,6 +1,6 @@
 {
   "name": "ng2-qrcode",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Angular2 QRCode generator using qrcodejs",
   "author": "Andrea Patuzzo <andrea@pragmatic.club>",
   "license": "MIT",
@@ -41,6 +41,6 @@
     "es6-promise": "^3.0",
     "es6-shim": "^0.35",
     "typescript": "^1.8.10",
-    "typings":"^0.8.1"
+    "typings": "^0.8.1"
   }
 }
