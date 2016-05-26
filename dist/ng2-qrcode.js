@@ -8,12 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 var core_1 = require('@angular/core');
 var QRCodeComponent = (function () {
-    function QRCodeComponent(window, el) {
+    function QRCodeComponent(el) {
         this.el = el;
         this.qrdata = '';
         this.size = 256;
@@ -69,9 +66,8 @@ var QRCodeComponent = (function () {
         core_1.Component({
             selector: 'qrcode',
             template: ''
-        }),
-        __param(0, core_1.Inject('window')), 
-        __metadata('design:paramtypes', [Window, core_1.ElementRef])
+        }), 
+        __metadata('design:paramtypes', [core_1.ElementRef])
     ], QRCodeComponent);
     return QRCodeComponent;
 }());

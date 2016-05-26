@@ -7,6 +7,6 @@ export declare class QRCodeComponent implements OnInit {
     colordark: String;
     colorlight: String;
     usesvg: Boolean;
-    constructor(window: Window, el: ElementRef);
+    constructor(el: ElementRef);
     ngOnInit(): void;
 }
