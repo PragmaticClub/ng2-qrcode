@@ -8,7 +8,7 @@ ng2-qrcode is a simple Angular2 Component for generating QRCode It uses [QRCode.
 
 ## Basic Usage
 
-Include the component and declare it as Directive
+### Include the component and declare it as Directive
 
 ```
 import {Component, OnInit} from '@angular/core';
@@ -25,7 +25,7 @@ import {QRCodeComponent} from 'ng2-qrcode'
 })
 ```
 
-Include the qrcode.js library in your site
+### Include the qrcode.js library in your site
 
 ```  
   <script src="<node_modules_path>/qrcodejs2/qrcode.min.js"></script>
