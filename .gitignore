@@ -9,10 +9,4 @@ npm-debug.log
 Thumbs.db
 .DS_Store
 
-# Ignored files
-*.js
-*.map
-*.d.ts
-
-# Include /dist
-!dist/*
+/typings
