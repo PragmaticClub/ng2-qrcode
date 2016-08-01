@@ -1,4 +1,4 @@
-import {Component, Inject, Input, ElementRef, OnInit} from '@angular/core';
+import {Component, Input, ElementRef, OnInit} from '@angular/core';
 
 declare var QRCode: any;
 
@@ -7,21 +7,21 @@ declare var QRCode: any;
   template: ''
 })
 export class QRCodeComponent implements OnInit {
-  @Input() qrdata: String = ''
-  @Input() size: Number = 256
-  @Input() level: String = 'M'
-  @Input() colordark: String = '#000000'
-  @Input() colorlight: String = '#ffffff'
-  @Input() usesvg: Boolean = false
-  
+  @Input() qrdata: String = '';
+  @Input() size: Number = 256;
+  @Input() level: String = 'M';
+  @Input() colordark: String = '#000000';
+  @Input() colorlight: String = '#ffffff';
+  @Input() usesvg: Boolean = false;
+
   constructor(
     private el: ElementRef
   ) { }
 
   ngOnInit() {
     try {
-      if(this.qrdata===''){
-        throw new Error("Empty QR Code data");
+      if (this.qrdata === '') {
+        throw new Error('Empty QR Code data');
       }
       new QRCode(this.el.nativeElement, {
         text: this.qrdata,
@@ -32,9 +32,8 @@ export class QRCodeComponent implements OnInit {
         useSVG: this.usesvg,
         correctLevel: QRCode.CorrectLevel[this.level.toString()]
       });
-    }
-    catch (e) {
-      console.error("Error generating QR Code: " + e.message);
+    } catch (e) {
+      console.error('Error generating QR Code: ' + e.message);
     }
   }
 }

@@ -22,7 +22,7 @@ var QRCodeComponent = (function () {
     QRCodeComponent.prototype.ngOnInit = function () {
         try {
             if (this.qrdata === '') {
-                throw new Error("Empty QR Code data");
+                throw new Error('Empty QR Code data');
             }
             new QRCode(this.el.nativeElement, {
                 text: this.qrdata,
@@ -35,7 +35,7 @@ var QRCodeComponent = (function () {
             });
         }
         catch (e) {
-            console.error("Error generating QR Code: " + e.message);
+            console.error('Error generating QR Code: ' + e.message);
         }
     };
     __decorate([
