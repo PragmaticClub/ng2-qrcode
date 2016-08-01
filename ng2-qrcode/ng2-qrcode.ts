@@ -1,6 +1,8 @@
+/// <reference path="ng2-qrcode.d.ts"/>
 import {Component, Input, ElementRef, OnInit} from '@angular/core';
 
-declare var QRCode: any;
+import * as QRCode from 'qrcodejs2';
+
 
 @Component({
   selector: 'qrcode',
