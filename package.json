@@ -37,9 +37,11 @@
     "zone.js": "^0.6.12"
   },
   "devDependencies": {
+    "codelyzer": "0.0.26",
     "ts-loader": "^0.8",
     "es6-promise": "^3.0",
     "es6-shim": "^0.35",
+    "tslint": "3.13.0",
     "typescript": "^1.8.10",
     "typings": "^0.8.1"
   }
