@@ -1,20 +1,35 @@
 /// <reference path="ng2-qrcode.d.ts"/>
-import {Component, Input, ElementRef, OnInit} from '@angular/core';
+
+import {
+  Component,
+  Input,
+  ElementRef,
+  OnChanges,
+  OnInit,
+  SimpleChange,
+  ChangeDetectionStrategy
+} from '@angular/core';
 
 import * as QRCode from 'qrcodejs2';
 
+function isValidQrCodeText(data: string) {
+  return !(typeof data === 'undefined' || data === '');
+}
 
 @Component({
   selector: 'qrcode',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: ''
 })
-export class QRCodeComponent implements OnInit {
-  @Input() qrdata: String = '';
-  @Input() size: Number = 256;
-  @Input() level: String = 'M';
-  @Input() colordark: String = '#000000';
-  @Input() colorlight: String = '#ffffff';
-  @Input() usesvg: Boolean = false;
+export class QRCodeComponent implements OnChanges, OnInit {
+  @Input() qrdata: string = '';
+  @Input() size: number = 256;
+  @Input() level: string = 'M';
+  @Input() colordark: string = '#000000';
+  @Input() colorlight: string = '#ffffff';
+  @Input() usesvg: boolean = false;
+
+  private qrcode: any;
 
   constructor(
     private el: ElementRef
@@ -22,10 +37,10 @@ export class QRCodeComponent implements OnInit {
 
   ngOnInit() {
     try {
-      if (this.qrdata === '') {
+      if (!isValidQrCodeText(this.qrdata)) {
         throw new Error('Empty QR Code data');
       }
-      new QRCode(this.el.nativeElement, {
+      this.qrcode = new QRCode(this.el.nativeElement, {
         text: this.qrdata,
         width: this.size,
         height: this.size,
@@ -38,4 +53,16 @@ export class QRCodeComponent implements OnInit {
       console.error('Error generating QR Code: ' + e.message);
     }
   }
+
+  ngOnChanges(changes: {[propertyName: string]: SimpleChange}) {
+    if (!this.qrcode) {
+      return;
+    }
+    const qrData = changes['qrdata'];
+    if (qrData && isValidQrCodeText(qrData.currentValue)) {
+      this.qrcode.clear();
+      this.qrcode.makeCode(qrData.currentValue);
+    }
+  }
+
 }
