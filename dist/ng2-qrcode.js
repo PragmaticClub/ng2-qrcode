@@ -1,3 +1,4 @@
+/// <reference path="ng2-qrcode.d.ts"/>
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -8,9 +9,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-/// <reference path="ng2-qrcode.d.ts"/>
 var core_1 = require('@angular/core');
 var QRCode = require('qrcodejs2');
+function isValidQrCodeText(data) {
+    return !(typeof data === 'undefined' || data === '');
+}
 var QRCodeComponent = (function () {
     function QRCodeComponent(el) {
         this.el = el;
@@ -23,10 +26,10 @@ var QRCodeComponent = (function () {
     }
     QRCodeComponent.prototype.ngOnInit = function () {
         try {
-            if (this.qrdata === '') {
+            if (!isValidQrCodeText(this.qrdata)) {
                 throw new Error('Empty QR Code data');
             }
-            new QRCode(this.el.nativeElement, {
+            this.qrcode = new QRCode(this.el.nativeElement, {
                 text: this.qrdata,
                 width: this.size,
                 height: this.size,
@@ -38,6 +41,16 @@ var QRCodeComponent = (function () {
         }
         catch (e) {
             console.error('Error generating QR Code: ' + e.message);
+        }
+    };
+    QRCodeComponent.prototype.ngOnChanges = function (changes) {
+        if (!this.qrcode) {
+            return;
+        }
+        var qrData = changes['qrdata'];
+        if (qrData && isValidQrCodeText(qrData.currentValue)) {
+            this.qrcode.clear();
+            this.qrcode.makeCode(qrData.currentValue);
         }
     };
     __decorate([
@@ -67,6 +80,7 @@ var QRCodeComponent = (function () {
     QRCodeComponent = __decorate([
         core_1.Component({
             selector: 'qrcode',
+            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
             template: ''
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef])
